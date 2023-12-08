@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pagesController;
+use App\Http\Controllers\ArticlesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,5 @@ Route::get('/', function () {
 Route::get('/about', [pagesController::class, 'aboutPage'])->name('about');
 Route::get('/services', [pagesController::class, 'servicesPage'])->name('our-services');
 Route::get('/leader', [pagesController::class, 'leaderPage'])->name('leader');
+
+Route::get('/articles/{code}', [ArticlesController::class, 'viewArticle'])->name('article');

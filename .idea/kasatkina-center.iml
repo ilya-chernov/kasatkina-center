@@ -115,6 +115,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/scout" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/orchid/blade-icons" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/orchid/icons" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/orchid/platform" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tabuna/breadcrumbs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/watson/active" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

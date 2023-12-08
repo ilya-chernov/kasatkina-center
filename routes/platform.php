@@ -17,6 +17,8 @@ use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
 use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
+use App\Orchid\Screens\Service\ServicesListScreen;
+use App\Orchid\Screens\Article\ArticlesListScreen;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,13 @@ use Tabuna\Breadcrumbs\Trail;
 // Main
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
+
+Route::screen('/services', ServicesListScreen::class)
+    ->name('platform.services');
+
+Route::screen('/articles', ArticlesListScreen::class)
+    ->name('platform.articles');
+
 
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)

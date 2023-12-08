@@ -1,9 +1,10 @@
 /*
-style.css 
+style.css
 Версия 2 от 05.07.2023
+Версия 3 от 08.12.2023
 
  */
- 
+
 html {
     margin: 0;
     padding: 0;
@@ -11,7 +12,7 @@ html {
 
 
 body {
-    
+
     margin: 0;
     padding: 0;
     font-family: 'Open Sans';
@@ -185,7 +186,7 @@ header {
     text-decoration: none;
     color: black;
     margin-right: 15px;
-    
+
 }
 
 .menu__nav li:last-child {
@@ -211,7 +212,7 @@ header {
 .menu__calltoaction {
     flex: 1 0 auto;
     text-align: end;
-    
+
 }
 
 .menu__calltoaction a {
@@ -235,7 +236,7 @@ header {
     display: flex;
 }
 
-.hero-image img { 
+.hero-image img {
     object-fit:contain;
     width: 90%;
 }
@@ -398,7 +399,7 @@ footer {
     margin-top: 40px;
     text-align: center;
     justify-content: center;
-    
+
 
 }
 
@@ -418,14 +419,14 @@ footer {
 
 
 .prices {
-    
+
     display: flex;
     flex-direction: column;
     color: white;
     justify-content: center;
     align-items: center;
 
-    
+
 
 }
 
@@ -462,8 +463,25 @@ footer {
 .leader img {
     width: 70%;
     border-radius: 50%;
-    
+
 }
+
+.article__title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.article__content {
+    margin-top: 45px;
+    line-height: 36px;
+}
+
+.article__image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
 
 .leader-image {
     display: flex;
@@ -494,7 +512,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     object-fit: cover;
-    
+
 }
 
 .photo-gallery img {
@@ -625,22 +643,28 @@ footer {
     }
 }
 
-.embed-container { 
-    position: relative; 
-    padding-bottom: 56.25%; 
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
     height: 0;
      overflow: hidden;
       max-width: 100%;
      }
       .embed-container iframe, .embed-container object, .embed-container embed {
          position: absolute;
-          top: 0; 
+          top: 0;
           left: 0;
-           width: 100%; 
+           width: 100%;
            height: 100%;
          }
 
 @media screen and (max-width: 760px) {
+
+    .article__content {
+        padding: 13px;
+        line-height: 30px;
+        text-align: justify;
+    }
     p {
         font-size: 11pt;
     }
@@ -663,7 +687,7 @@ footer {
     }
 
     .text-block {
-   
+
     }
 
     .listing-image {
@@ -695,13 +719,13 @@ footer {
 }
 
 .listing-text {
-    width: 90%; 
+    width: 90%;
 }
 
     .menu__nav li {
         display: block;
 
-        
+
     }
 
     .menu__nav ul {
@@ -721,7 +745,7 @@ footer {
 
     .greenline-contacts {
         flex-direction: column;
-        
+
     }
 
     .greenline-contacts__item {
@@ -796,11 +820,11 @@ footer {
         flex-direction: column-reverse;
         align-items: center;
         justify-content: center;
-        
+
     }
 
     .map-text {
-        
+
         text-align: center;
         margin-bottom: 40px;
     }
