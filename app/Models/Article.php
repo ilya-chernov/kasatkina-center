@@ -13,10 +13,15 @@ class Article extends Model
 
     protected $table = 'articles';
 
+//    protected $casts = [
+//        'content' => 'array',
+//        'code' => 'array'
+//    ];
+
     protected $fillable = [
       'title',
       'short_description',
-      'cover_url',
+      'coverImgUrl',
       'content',
       'code',
       'author_id'

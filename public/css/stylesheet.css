@@ -472,9 +472,16 @@ footer {
     margin-bottom: 40px;
 }
 
+
+
 .article__content {
     margin-top: 45px;
     line-height: 36px;
+}
+
+.article__content > p > img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 .article__image img {

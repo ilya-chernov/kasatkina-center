@@ -23,4 +23,5 @@ Route::get('/about', [pagesController::class, 'aboutPage'])->name('about');
 Route::get('/services', [pagesController::class, 'servicesPage'])->name('our-services');
 Route::get('/leader', [pagesController::class, 'leaderPage'])->name('leader');
 
+Route::get('/articles', [ArticlesController::class, 'index'])->name('article.index');
 Route::get('/articles/{code}', [ArticlesController::class, 'viewArticle'])->name('article');

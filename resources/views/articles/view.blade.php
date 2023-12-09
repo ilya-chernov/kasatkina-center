@@ -11,7 +11,7 @@ $name = " | Центр физиотерапии доктора Касаткин�
     </div>
 
     <div class="article__image">
-        <img src="{{ $article['cover_url'] }}" alt="#">
+        <img src="{{ $article['coverImgUrl'] }}" alt="#">
     </div>
 
     <div class="article__content">

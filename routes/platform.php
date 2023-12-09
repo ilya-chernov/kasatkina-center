@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 use Tabuna\Breadcrumbs\Trail;
 use App\Orchid\Screens\Service\ServicesListScreen;
 use App\Orchid\Screens\Article\ArticlesListScreen;
-
+use App\Orchid\Screens\Article\NewArticle;
+use App\Orchid\Screens\Article\ArticleEditScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -40,6 +41,14 @@ Route::screen('/services', ServicesListScreen::class)
 
 Route::screen('/articles', ArticlesListScreen::class)
     ->name('platform.articles');
+
+Route::screen('/articles/create', NewArticle::class)
+    ->name('platform.newArticle');
+
+Route::screen('/articles/edit/{id}', ArticleEditScreen::class)
+    ->name('platform.editArticle');
+
+
 
 
 // Platform > Profile

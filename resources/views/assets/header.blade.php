@@ -103,6 +103,7 @@
                         <ul id="menuNav">
                             <li><a href="{{ route('home')}}">Главная</a></li>
                             <li><a href="{{ route('about')}}">О медцентре</a></li>
+                            <li><a href="{{ route('article.index')}}">Статьи</a></li>
                             <li><a href="{{ route('our-services')}}">Услуги</a></li>
                             <li><a href="{{ route('home')}}#contacts">Контакты</a></li>
                         </ul>
