@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ServiceCategories;
 
 class Service extends Model
 {
@@ -23,5 +24,13 @@ class Service extends Model
       "comments",
       "isActive"
     ];
+
+    public function category() {
+        return $this->belongsTo(
+          ServiceCategories::class,
+          "category_id",
+          "id"
+        );
+    }
 
 }

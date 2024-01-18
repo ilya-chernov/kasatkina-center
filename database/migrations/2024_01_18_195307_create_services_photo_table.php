@@ -26,11 +26,6 @@ class CreateServicesPhotoTable extends Migration
     }
     public function down()
     {
-        Schema::table('services_photo', function (Blueprint $table) {
-            $table->dropForeign('service_id');
-            $table->dropColumn('service_id');
-        });
-
-        Schema::dropIfExists('services_photo');
+         Schema::dropIfExists('services_photo');
     }
 }

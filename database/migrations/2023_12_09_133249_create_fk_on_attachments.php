@@ -28,10 +28,9 @@ class CreateFkOnAttachments extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            $table->dropForeign('coverImgUrl');
-            $table->dropColumn('coverImgUrl');
-        });
         Schema::dropIfExists("articles");
+//        Schema::table('articles', function (Blueprint $table) {
+//            $table->dropForeign('coverImgUrl');
+//        });
     }
 }
