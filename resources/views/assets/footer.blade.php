@@ -16,7 +16,7 @@
     </div>
 </footer>
 
-<script src="menu.js"></script>
+<script src="{{ asset('js/menu.js') }}"></script>
 @yield('foot')
 
 </body>

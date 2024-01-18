@@ -3,19 +3,40 @@
 $name = " | Центр физиотерапии доктора Касаткиной";
 ?>
 @section('title', $article['title'] . " ".$name )
+@section('hero')
+    <style>
+        .article__hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1)), url('{{ $article->coverImgUrl }}');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
 
-@section('content')
-    <div class="article__title">
-        <h1>{{ $article['title'] }}</h1>
-        <p>{{ $article['short_description'] }}</p>
+
+    </style>
+
+    <body>
+    <div class="article__hero">
+            <div class="article__hero__text">
+                <h3>Центр физиотерапии <br> доктора Касаткиной</h3>
+                <h1>{{ $article['title'] }}</h1>
+                <p>{{ $article['short_description'] }}</p>
+        </div>
+
+
     </div>
 
-    <div class="article__image">
-        <img src="{{ $article['coverImgUrl'] }}" alt="#">
-    </div>
+    @endsection
 
-    <div class="article__content">
-        {!! $article['content'] !!}
-    </div>
+    @section('content')
+        <div class="article__content">
+            {!! $article['content'] !!}
+        </div>
 
 @endsection

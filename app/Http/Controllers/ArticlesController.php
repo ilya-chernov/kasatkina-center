@@ -15,21 +15,9 @@ class ArticlesController extends Controller
     }
 
 
-    public function getPostImage()
-    {
-        if (isset($userAvatarId)) {
-            $attachment = Attachments::find($userAvatarId);
-            if ($attachment) {
-                return $attachment->fullPath();
-            }
-        } else {
-            return "/images/Avatar.png";
-        }
-    }
-
 
     public function viewArticle($code) {
-        $article = Article::where('code', '=', $code)->firstOrFail();
+        $article = Article::where('code', $code)->firstOrFail();
         $attachment = Attachment::find($article['coverImgUrl']);
         if($attachment) {
             $article['coverImgUrl'] = $attachment->fullPath();

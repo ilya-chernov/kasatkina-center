@@ -106,7 +106,11 @@
                             <li><a href="{{ route('article.index')}}">Статьи</a></li>
                             <li><a href="{{ route('our-services')}}">Услуги</a></li>
                             <li><a href="{{ route('home')}}#contacts">Контакты</a></li>
+                            @auth<li><a href="/admin">Управление сайтом</a></li>@endauth
+
                         </ul>
+
+
                     </div>
 
                  <!--   <div class="menu__calltoaction">

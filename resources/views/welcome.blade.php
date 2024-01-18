@@ -3,7 +3,7 @@
 
 
 <body>
-    
+
     <div class="hero">
         <div class="container">
             <div class="hero-container">
@@ -31,7 +31,7 @@
         </div>
 
         <div class="text-block">
-            <p>В нашем центре Вы можете записаться на процедуры, направленные на лечение и профилактику различных  заболеваний: 
+            <p>В нашем центре Вы можете записаться на процедуры, направленные на лечение и профилактику различных  заболеваний:
                 физиотерапевтическое воздействие теплом, электрическим током, магнитными полями, лазером и другими физическими факторами.</p>
 
                 <div class='embed-container'>
@@ -99,8 +99,8 @@
             </div>
         </div>
     </section>
-    
-    
+
+
     <section class="video-about-us">
         <div class="block-title">
             <h2>Видео о нашем центре</h2>
@@ -148,7 +148,7 @@
 
             <div class="map">
                 <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5960cc1ec3414d309f0bf1b1b138eb229a26d6af49dcfa44c85aab1581163026&amp;width=100%25&amp;height=396&amp;lang=ru_RU&amp;scroll=true"></script>
-           
+
                 <div class="map-item">
                     <h1>Как нас найти</h1>
                     <p><b>Адрес:</b> г. Калининград, ул. Уральская, д. 20, пом. 4</p>
@@ -162,18 +162,18 @@
                         <div class="phone-img"><img src="/media/phone.png" alt=""></div>
                         <div class="phone-text"> +7 (4012) 52-66-99</div>
                     </div>
-                        
-                       
+
+
                     <br>
                 </div>
-           
-           
-            </div>
-           
-                
 
-       
-        
+
+            </div>
+
+
+
+
+
      </div>
 </section>
 

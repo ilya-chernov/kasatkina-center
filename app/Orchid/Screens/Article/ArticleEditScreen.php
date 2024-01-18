@@ -88,7 +88,7 @@ class ArticleEditScreen extends Screen
 
         $userData = $request->input('article');
 
-        $userData['coverImgUrl'] = $userData['coverImgUrl'][0];
+        $userData['coverImgUrl'] = $userData['coverImgUrl'][1];
 
         $article->fill($userData)->save();
 

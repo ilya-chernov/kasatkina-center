@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ServicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,12 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', [pagesController::class, 'aboutPage'])->name('about');
-Route::get('/services', [pagesController::class, 'servicesPage'])->name('our-services');
+Route::get('/services', [ServicesController::class, 'index'])->name('our-services');
+Route::get('/services/{id}', [ServicesController::class, "showService"])->name('service.show');
+
 Route::get('/leader', [pagesController::class, 'leaderPage'])->name('leader');
 
 Route::get('/articles', [ArticlesController::class, 'index'])->name('article.index');
 Route::get('/articles/{code}', [ArticlesController::class, 'viewArticle'])->name('article');
+
+

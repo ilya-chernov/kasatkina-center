@@ -4,7 +4,18 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
-@endsection 
+@endsection
+
+@section('section-header')
+    <div class="section-header">
+        <div class="container">
+            <div class="section-header-content">
+                <h1>О медицинском центре</h1>
+            </div>
+        </div>
+    </div>
+@endsection
+
 
 @section('foot')
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
@@ -22,8 +33,6 @@
 @section('content')
 
 <div class="ab">
-<h2 class="mb-4">О медицинском центре</h2>
-
   <div class='embed-container'>
     <iframe src='https://www.youtube.com/embed/oaXegu7NqfQ' frameborder='0' allowfullscreen></iframe>
     </iframe>
@@ -70,7 +79,7 @@
     <p>ОПФ — Общество с ограниченной ответственностью;</p>
     <p>Адрес места нахождения — 236022, Россия, Калининградская область, г. Калининград, ул. Уральская, д. 20, пом. 4;</p>
     <p>ОГРН — 1223900006131;</p>
-   
+
 
 
 <div class="download">

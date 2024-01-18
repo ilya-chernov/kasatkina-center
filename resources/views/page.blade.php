@@ -1,8 +1,9 @@
 @include('assets.header')
 
-<div class="post-container">
+@yield('hero')
+
+@yield('section-header')
     <div class="container">
         @yield('content')
     </div>
-</div>
 @include('assets.footer')
