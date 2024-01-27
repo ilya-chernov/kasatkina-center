@@ -12,6 +12,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->unsignedBigInteger("category_id");
             $table->string("title");
+            $table->string("slug")->unique();
             $table->text("description");
             $table->text("indications_for_use");
             $table->integer("price")->nullable();

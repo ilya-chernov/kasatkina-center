@@ -2,7 +2,16 @@
 
 namespace App\Orchid\Screens\Service;
 
+use App\Models\Service;
+use App\Models\ServiceCategories;
+use Illuminate\Http\Request;
+use Orchid\Screen\Actions\ModalToggle;
+use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Screen;
+use Orchid\Screen\TD;
+use Orchid\Support\Facades\Layout;
+use Orchid\Support\Facades\Toast;
 
 class ServicesCategories extends Screen
 {
@@ -13,7 +22,9 @@ class ServicesCategories extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        return [
+            "categories" => ServiceCategories::all()
+        ];
     }
 
     /**
@@ -23,7 +34,12 @@ class ServicesCategories extends Screen
      */
     public function name(): ?string
     {
-        return 'ServicesCategories';
+        return 'Категории услуг';
+    }
+
+    public function description(): ?string
+    {
+        return 'Требуются для формирования разделов категорий услуг на сайте';
     }
 
     /**
@@ -33,7 +49,12 @@ class ServicesCategories extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            ModalToggle::make('Создать категорию')
+                ->modal('createNewCategory')
+                ->method('createNewCategory')
+                ->icon('plus'),
+        ];
     }
 
     /**
@@ -43,6 +64,34 @@ class ServicesCategories extends Screen
      */
     public function layout(): iterable
     {
-        return [];
+        return [
+            Layout::table('categories', [
+                TD::make('id', 'ID'),
+                TD::make('title', 'Название'),
+                TD::make('description', 'Описание категории')
+            ]),
+            Layout::modal('createNewCategory', [
+                Layout::rows([
+                    Input::make('title')->required()->title("Название категории"),
+                    TextArea::make('description')->required()->title("Описание категории")
+                ]),
+            ])->title('Создать категорию услуг')
+                ->applyButton('Создать')
+                ->closeButton('Закрыть')
+        ];
+    }
+
+    public function createNewCategory(Request $request)
+    {
+
+       if(!empty($request->title) && !empty($request->description)) {
+           ServiceCategories::create([
+                "title" => $request->title,
+               "description" => $request->description
+           ]);
+           Toast::info("Категория успешно создана");
+       } else {
+           Toast::error("Произошла ошибка. Повторите позднее");
+       }
     }
 }

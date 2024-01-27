@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Service;
+use Orchid\Screen\AsSource;
 
 class ServiceCategories extends Model
 {
     use HasFactory;
+    use AsSource;
 
     protected $table = "service_categories";
     public $timestamps = false;

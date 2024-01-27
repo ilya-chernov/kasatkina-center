@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('/about', [pagesController::class, 'aboutPage'])->name('about');
 Route::get('/services', [ServicesController::class, 'index'])->name('our-services');
-Route::get('/services/{id}', [ServicesController::class, "showService"])->name('service.show');
+Route::get('/services/{slug}', [ServicesController::class, "showService"])->name('service.show');
 
 Route::get('/leader', [pagesController::class, 'leaderPage'])->name('leader');
 

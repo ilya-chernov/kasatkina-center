@@ -21,6 +21,8 @@ use App\Orchid\Screens\Service\ServicesListScreen;
 use App\Orchid\Screens\Article\ArticlesListScreen;
 use App\Orchid\Screens\Article\NewArticle;
 use App\Orchid\Screens\Article\ArticleEditScreen;
+use App\Orchid\Screens\Service\ServicesCategories;
+use App\Orchid\Screens\Service\NewServiceScreen;
 /*
 |--------------------------------------------------------------------------
 | Dashboard Routes
@@ -38,6 +40,12 @@ Route::screen('/main', PlatformScreen::class)
 
 Route::screen('/services', ServicesListScreen::class)
     ->name('platform.services');
+
+Route::screen('/services/new', NewServiceScreen::class)
+    ->name('platform.newService');
+
+Route::screen('/services-categories', ServicesCategories::class)
+    ->name('platform.categories');
 
 Route::screen('/articles', ArticlesListScreen::class)
     ->name('platform.articles');

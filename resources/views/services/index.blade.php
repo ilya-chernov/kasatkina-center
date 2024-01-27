@@ -14,6 +14,9 @@
 
 
 @section('content')
+    @foreach($result as $data)
+        {{ $data->title }}
+    @endforeach
     <div class="ab">
         <h3>Физиотерапия</h3>
         <div class="prices">

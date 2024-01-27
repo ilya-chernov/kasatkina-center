@@ -2,7 +2,13 @@
 
 namespace App\Orchid\Screens\Service;
 
+use App\Models\Service;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Screen;
+use Orchid\Screen\TD;
+use Orchid\Support\Facades\Layout;
+use Orchid\Support\Facades\Toast;
 
 class ServicesListScreen extends Screen
 {
@@ -13,7 +19,9 @@ class ServicesListScreen extends Screen
      */
     public function query(): iterable
     {
-        return [];
+        return [
+            "services" => Service::all()
+        ];
     }
 
     /**
@@ -33,16 +41,25 @@ class ServicesListScreen extends Screen
      */
     public function commandBar(): iterable
     {
-        return [];
+        return [
+            Button::make('Новая услуга')
+                ->method('createNewService')
+                ->icon('plus'),
+        ];
     }
 
-    /**
-     * Views.
-     *
-     * @return \Orchid\Screen\Layout[]|string[]
-     */
+    public function createNewService() {
+        return redirect()->route('platform.newService');
+    }
     public function layout(): iterable
     {
-        return [];
+        return [
+            Layout::table('services', [
+                TD::make('id', 'ID'),
+                TD::make('title', 'Название услуги'),
+                TD::make('description', 'Описание'),
+                TD::make('price', 'Цена'),
+            ]),
+        ];
     }
 }

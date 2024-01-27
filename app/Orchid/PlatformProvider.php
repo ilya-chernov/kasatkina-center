@@ -82,10 +82,14 @@ class PlatformProvider extends OrchidServiceProvider
 //                ->badge(function () {
 //                    return Dashboard::version();
 //                }, Color::DARK()),
+            Menu::make('Категории услуг')
+                ->icon('bs.grid')
+                ->title('Контент на сайте')
+                ->route('platform.categories'),
+
 
             Menu::make('Список услуг')
                 ->icon('bs.grid')
-                ->title('Контент на сайте')
                 ->route('platform.services'),
 
             Menu::make('Статьи')
