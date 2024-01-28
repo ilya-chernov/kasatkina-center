@@ -21,7 +21,8 @@ class CreateServicesPhotoTable extends Migration
         Schema::table('services_photo', function (Blueprint $table){
             $table->foreign("service_id")
                 ->references("id")
-                ->on("services");
+                ->on("services")
+                ->onDelete('cascade');
         });
     }
     public function down()

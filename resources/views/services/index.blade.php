@@ -12,74 +12,75 @@
     </div>
 @endsection
 
+<style>
+    .card {
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+    }
+
+    @media (max-width: 960px) {
+        .card {
+            padding: 0;
+            margin: 20px 0 20px 0;
+            width: fit-content;
+        }
+
+        .card__text {
+            padding: 15px;
+        }
+    }
+
+</style>
+
 
 @section('content')
-    @foreach($result as $data)
-        {{ $data->title }}
-    @endforeach
+
     <div class="ab">
-        <h3>Физиотерапия</h3>
-        <div class="prices">
-
-            <div class="price-item">
-                <h3>Прием (консультация, подбор схемы лечения) врача-физиотерапевта</h3>
-                <div class="price">1500 руб</div>
+        @foreach($result as $category)
+            @if(count($category->services) > 0)
+            <div class="category-title">
+                <h2>{{ $category->title }}</h2>
             </div>
+            @endif
+                @foreach($category->services as $service)
+                    <div onclick="location.href='https://dev.kasatkina-center.ru/services/{{$service->slug}}'" class="card">
+                        <img src="{{ "https://dev.kasatkina-center.ru".$service->attachment->fullPath() }}" alt="Article Image">
+                        <h2>{{$service->title}}</h2>
+                        <p>{{$service->price}} рублей</p>
+                    </div>
+                @endforeach
 
-            <div class="price-item">
-                <h3>СМТ-терапия (воздействие синусоидальными модулированными токами) одной анатомической зоны</h3>
-                <div class="price">600 руб</div>
-            </div>
-            <div class="price-item">
-                <h3>СМТ-терапия (воздействие синусоидальными модулированными токами) двух и каждой дополнительной
-                    зоны</h3>
-                <div class="price">1000 (500) руб</div>
-            </div>
-            <div class="price-item">
-                <h3>Флюктуоризация (воздействие флюктурирующими токами) одной анатомической зоны</h3>
-                <div class="price">600 руб</div>
-            </div>
-            <div class="price-item">
-                <h3>Флюктуоризация (воздействие флюктурирующими токами) одной анатомической зоны</h3>
-                <div class="price">1000 (500) руб</div>
-            </div>
-
-            <div class="price-item">
-                <h3>Магнитотерапия одной анатомической зоны</h3>
-                <div class="price">600 руб</div>
-            </div>
-
-            <div class="price-item">
-                <h3>Магнитотерапия двух и каждой дополнительной зоны</h3>
-                <div class="price">1000 (500) руб</div>
-            </div>
-
-            <div class="price-item">
-                <h3>Лазеротерапия (аппаратом Азор_2к)</h3>
-                <div class="price">500 руб</div>
-            </div>
-
-            <div class="price-item">
-                <h3>Транскраниальная электротерапия (электросон)</h3>
-                <div class="price">500 руб</div>
-            </div>
-
-        </div>
-
-        <h3>Психология</h3>
-
-        <div class="prices">
-
-            <div class="price-item">
-                <h3>Прием психолога (индивидуальная консультация) 1 час*</h3>
-                <div class="price">3000 руб</div>
-            </div>
-
-            <div class="price-item">
-                <h3>Прием психолога (групповое занятие; стоимость за 1 чел.) 4 часа**</h3>
-                <div class="price">3200 руб</div>
-            </div>
-        </div>
+        @endforeach
 
         <p>* Примечание: скидка 50% для студентов БФУ им.И.Канта</p>
         <p>**Примечание: группа максимально 6 человек;</p>

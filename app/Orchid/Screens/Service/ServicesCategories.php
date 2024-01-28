@@ -3,8 +3,10 @@
 namespace App\Orchid\Screens\Service;
 
 use App\Models\Service;
-use App\Models\ServiceCategories;
+use App\Models\ServiceCategories as SC;
 use Illuminate\Http\Request;
+use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\DropDown;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\TextArea;
@@ -23,7 +25,7 @@ class ServicesCategories extends Screen
     public function query(): iterable
     {
         return [
-            "categories" => ServiceCategories::all()
+            "categories" => SC::all()
         ];
     }
 
@@ -68,7 +70,22 @@ class ServicesCategories extends Screen
             Layout::table('categories', [
                 TD::make('id', 'ID'),
                 TD::make('title', 'Название'),
-                TD::make('description', 'Описание категории')
+                TD::make('description', 'Описание категории'),
+                TD::make(__('Actions'))
+                    ->align(TD::ALIGN_CENTER)
+                    ->width('100px')
+                    ->render(function (SC $category) {
+                        return DropDown::make()
+                            ->icon('options-vertical')
+                            ->list([
+                                Button::make(__('Delete'))
+                                    ->icon('trash')
+                                    ->confirm("Вы действительно хотите удалить эту категорию? Вместе с ней удалятся все услуги, которые ей принадлежат. Для того, чтобы избежать этого, переназначьте эти услуги в другую категорию.")
+                                    ->method('remove', [
+                                        'id' => $category->id,
+                                    ]),
+                            ]);
+                    }),
             ]),
             Layout::modal('createNewCategory', [
                 Layout::rows([
@@ -81,11 +98,19 @@ class ServicesCategories extends Screen
         ];
     }
 
+    public function remove(Request $request) {
+        $req = SC::findOrFail($request->get('id'))->delete();
+        if($req) {
+            Toast::info("Категория была удалена.");
+        } else {
+            Toast::error("Ошибка при удалении элемента. Обратитесь к Администратору системы.");
+        }
+    }
     public function createNewCategory(Request $request)
     {
 
        if(!empty($request->title) && !empty($request->description)) {
-           ServiceCategories::create([
+           SC::create([
                 "title" => $request->title,
                "description" => $request->description
            ]);

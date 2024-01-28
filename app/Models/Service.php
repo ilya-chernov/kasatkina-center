@@ -21,6 +21,7 @@ class Service extends Model
         "category_id",
         "title",
         "slug",
+        "mainImgUrl",
         "description",
         "indications_for_use",
         "price",
@@ -35,6 +36,10 @@ class Service extends Model
             "category_id",
             "id"
         );
+    }
+
+    public function attachment() {
+        return $this->hasOne(Attachment::class, 'id', 'mainImgUrl');
     }
 
 }

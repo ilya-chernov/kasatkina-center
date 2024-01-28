@@ -15,6 +15,7 @@ class CreateServicesTable extends Migration
             $table->string("slug")->unique();
             $table->text("description");
             $table->text("indications_for_use");
+            $table->unsignedInteger("mainImgUrl")->nullable();
             $table->integer("price")->nullable();
             $table->text("comments")->nullable();
             $table->boolean("isActive")->default("1");
@@ -23,7 +24,13 @@ class CreateServicesTable extends Migration
         Schema::table("services", function (Blueprint $table) {
            $table->foreign("category_id")
            ->references("id")
-           ->on("service_categories");
+           ->on("service_categories")
+           ->onDelete('cascade');
+
+            $table->foreign("mainImgUrl")
+                ->references("id")
+                ->on("attachments")
+                ->onDelete("cascade");
         });
     }
 

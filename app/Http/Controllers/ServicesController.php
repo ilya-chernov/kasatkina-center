@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ServiceCategories;
+use App\Models\Attachment;
 use Illuminate\Http\Request;
 use App\Orchid\Screens\Service\ServicesCategories;
 
@@ -10,7 +12,7 @@ use App\Models\Service;
 class ServicesController extends Controller
 {
     public function index() {
-        $result = Service::all();
+        $result = ServiceCategories::all();
         return view('services.index', ["result" => $result]);
     }
 

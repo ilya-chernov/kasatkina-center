@@ -2,8 +2,12 @@
 
 namespace App\Orchid\Screens\Service;
 
+use App\Models\Article;
 use App\Models\Service;
+use Illuminate\Http\Request;
 use Orchid\Screen\Actions\Button;
+use Orchid\Screen\Actions\DropDown;
+use Orchid\Screen\Actions\Link;
 use Orchid\Screen\Actions\ModalToggle;
 use Orchid\Screen\Screen;
 use Orchid\Screen\TD;
@@ -57,9 +61,35 @@ class ServicesListScreen extends Screen
             Layout::table('services', [
                 TD::make('id', 'ID'),
                 TD::make('title', 'Название услуги'),
-                TD::make('description', 'Описание'),
+                TD::make('description', 'Описание')->defaultHidden(true)->width("300"),
                 TD::make('price', 'Цена'),
+                TD::make('slug', 'Адрес страницы'),
+                TD::make(__('Actions'))
+                    ->align(TD::ALIGN_CENTER)
+                    ->width('100px')
+                    ->render(function (Service $service) {
+                        return DropDown::make()
+                            ->icon('options-vertical')
+                            ->list([
+                                Button::make(__('Delete'))
+                                    ->icon('trash')
+                                    ->confirm("Вы действительно хотите удалить эту запись?")
+                                    ->method('remove', [
+                                        'id' => $service->id,
+                                    ]),
+                            ]);
+                    }),
             ]),
         ];
+    }
+
+    public function remove(Request $request): void
+    {
+        $req = Service::findOrFail($request->get('id'))->delete();
+        if($req) {
+            Toast::info("Услуга была удалена.");
+        } else {
+            Toast::error("Ошибка при удалении элемента. Обратитесь к Администратору системы.");
+        }
     }
 }
