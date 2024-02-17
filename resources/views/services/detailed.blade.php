@@ -4,6 +4,14 @@ $header = !empty($data->title) ? $data->title : "заголовок страни
 ?>
 @section('title', $header . " | Центр физиотерапии доктора Касаткиной" )
 
+@section('head')
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+
+    @section('foot')
+        <script src="gallery.js"></script>
+    @endsection
+
 @section('section-header')
     <div class="section-header">
         <div class="container">
@@ -30,6 +38,9 @@ $header = !empty($data->title) ? $data->title : "заголовок страни
             @if(!empty($data->comments))
                 <h3>Примечания:</h3>{!! $data->comments !!}
             @endif
+
+
+
         @else
             <h3>Информация об услуге недоступна.</h3>
             <p>Пожалуйста, приходите позднее. Мы обновляем содержимое сайта.</p>

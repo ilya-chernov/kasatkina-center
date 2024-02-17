@@ -4,6 +4,7 @@ namespace App\Orchid\Screens\Service;
 
 use App\Models\ServiceCategories as SC;
 use App\Models\Service;
+use App\Models\ServicePhoto;
 use App\Orchid\Layouts\Service\ImgUploadService;
 use App\Orchid\Layouts\Service\ServiceCreateLayout;
 use Illuminate\Http\Request;
@@ -91,7 +92,7 @@ class NewServiceScreen extends Screen
 
         if (!is_null($gallery) && !is_null($gallery['photos'])) {
             foreach ($gallery['photos'] as $item) {
-                SC::create([
+                ServicePhoto::create([
                     "service_id" => $service->id,
                     "photo_id" => $item,
                 ]);

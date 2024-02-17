@@ -71,6 +71,10 @@ class ServicesListScreen extends Screen
                         return DropDown::make()
                             ->icon('options-vertical')
                             ->list([
+                                Link::make(__('Edit'))
+                                    ->route('platform.editService', $service->id)
+                                    ->icon('pencil'),
+
                                 Button::make(__('Delete'))
                                     ->icon('trash')
                                     ->confirm("Вы действительно хотите удалить эту запись?")

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="/js/jquery3.7.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
 
 	<!-- FAVICON -->
@@ -45,13 +46,14 @@
 	<!-- /Yandex.Metrika counter -->
     @yield('head')
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesheet.css?ss') }}">
 
 
     <title>@yield('title')</title>
 
 </head>
 <body>
+
     <header>
         <div class="greenline">
             <div class="wrapper">

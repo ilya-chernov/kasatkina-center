@@ -14,9 +14,6 @@
 
 @section('content')
 
-
-
-
     <div class="articles-container">
         @foreach($articles as $article)
             <div onclick="location.href='https://dev.kasatkina-center.ru/articles/{{$article->code}}'" class="card">

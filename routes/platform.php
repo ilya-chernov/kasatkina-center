@@ -23,16 +23,7 @@ use App\Orchid\Screens\Article\NewArticle;
 use App\Orchid\Screens\Article\ArticleEditScreen;
 use App\Orchid\Screens\Service\ServicesCategories;
 use App\Orchid\Screens\Service\NewServiceScreen;
-/*
-|--------------------------------------------------------------------------
-| Dashboard Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the need "dashboard" middleware group. Now create something great!
-|
-*/
+use App\Orchid\Screens\Service\EditServiceScreen;
 
 // Main
 Route::screen('/main', PlatformScreen::class)
@@ -43,6 +34,9 @@ Route::screen('/services', ServicesListScreen::class)
 
 Route::screen('/services/new', NewServiceScreen::class)
     ->name('platform.newService');
+
+Route::screen('/services/edit/{id}', EditServiceScreen::class)
+    ->name('platform.editService');
 
 Route::screen('/services-categories', ServicesCategories::class)
     ->name('platform.categories');

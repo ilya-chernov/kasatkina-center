@@ -14,6 +14,7 @@ class CreateServicesPhotoTable extends Migration
     public function up()
     {
         Schema::create('services_photo', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger("service_id");
             $table->unsignedBigInteger("photo_id");
         });

@@ -38,8 +38,17 @@ class Service extends Model
         );
     }
 
+    protected $casts = [
+        'mainImgUrl' => 'array',
+    ];
+
     public function attachment() {
         return $this->hasOne(Attachment::class, 'id', 'mainImgUrl');
     }
+
+    public function photos() {
+        return $this->hasMany(ServicePhoto::class, "service_id", "id");
+    }
+
 
 }
