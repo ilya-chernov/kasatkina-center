@@ -44,9 +44,38 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/94136155" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
+    <script type='application/ld+json'>
+        {
+          "@context": "http://www.schema.org",
+          "@type": "MedicalClinic",
+          "name": "Центр физиолечения и психоконсультирования доктора Касаткиной",
+          "url": "https://kasatkina-center.ru/",
+          "logo": "https://kasatkina-center.ru/media/logo.png",
+          "description": "поддерживающие процедуры для комплексного безопасного лечения и восстановления организма после болезней и травм",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Уральская, 20, пом. 4",
+            "addressLocality": " г. Калининград",
+            "addressRegion": "Калининградская область",
+            "postalCode": "236022",
+            "addressCountry": "Россия"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "54.724143",
+            "longitude": "20.501924"
+          },
+          "openingHours": "Mo, Tu, We, Th, Fr, Sa 10:00-20:00",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7 (4012) 52-66-99"
+          }
+        }
+    </script>
+
     @yield('head')
     <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css?ss') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesheet.css?sfd') }}">
 
 
     <title>@yield('title')</title>

@@ -79,24 +79,25 @@ class EditServiceScreen extends Screen
 
     public function save(Service $service, Request $request)
     {
-        $userData = $request->input('service');
-        $gallery = $request->get('gallery');
-
-        if(count($userData['mainImgUrl']) < 2) {
-            $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][0];
-        } else {
-            $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][1];
-        }
+        $userData = $request->get('service');
+        $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][0];
+//        $gallery = $request->get('gallery');
+//
+//        if(count($userData['mainImgUrl']) < 2) {
+//            $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][0];
+//        } else {
+//            $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][1];
+//        }
         $service->fill($userData)->save();
-
-        if (!is_null($gallery) && !is_null($gallery['photos'])) {
-            foreach ($gallery['photos'] as $item) {
-                ServicePhoto::create([
-                    "service_id" => $service->id,
-                    "photo_id" => $item,
-                ]);
-            }
-        }
+//
+//        if (!is_null($gallery) && !is_null($gallery['photos'])) {
+//            foreach ($gallery['photos'] as $item) {
+//                ServicePhoto::create([
+//                    "service_id" => $service->id,
+//                    "photo_id" => $item,
+//                ]);
+//            }
+//        }
         Toast::info("Услуга была обновлена");
         return redirect()->route('platform.services');
     }

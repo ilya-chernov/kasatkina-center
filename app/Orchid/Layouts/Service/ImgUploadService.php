@@ -30,11 +30,7 @@ class ImgUploadService extends Rows
                Upload::make('service.mainImgUrl')
                    ->maxFiles(1)
                    ->acceptedFiles('image/*')
-                   ->title('Загрузка главного изображения'),
-
-               Upload::make('gallery.photos')
-                   ->acceptedFiles('image/*')
-                   ->title('Загрузка изображений в галерею'),
+                   ->title('Загрузка главного изображения')
            ])
         ];
     }

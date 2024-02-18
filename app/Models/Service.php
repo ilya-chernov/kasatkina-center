@@ -39,7 +39,7 @@ class Service extends Model
     }
 
     protected $casts = [
-        'mainImgUrl' => 'array',
+        'mainImgUrl' => 'integer',
     ];
 
     public function attachment() {

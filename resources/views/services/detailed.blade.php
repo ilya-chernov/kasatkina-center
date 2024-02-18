@@ -28,16 +28,21 @@ $header = !empty($data->title) ? $data->title : "заголовок страни
     <div class="article__content">
         @if(!empty($data))
             @if(!empty($data->description))
-                <h3>Описание процедуры: </h3>{!! $data->description !!}
+                <h3 class="service-desc">Описание процедуры</h3>{!! $data->description !!}
             @endif
 
             @if(!empty($data->indications_for_use))
-                <h3>Показания к применению: </h3>{!! $data->indications_for_use !!}
+                <h3 class="service-desc">Показания к применению</h3>{!! $data->indications_for_use !!}
             @endif
 
             @if(!empty($data->comments))
-                <h3>Примечания:</h3>{!! $data->comments !!}
+                <h3 class="service-desc">Примечания</h3>{!! $data->comments !!}
             @endif
+
+
+                @if(!empty($data->price))
+                    <h3 class="service-desc">Стоимость</h3>{!! $data->price !!} рублей.
+                @endif
 
 
 

@@ -76,8 +76,8 @@ class NewServiceScreen extends Screen
     public function save(Service $service, Request $request)
     {
         $userData = $request->get('service');
-        $userData['mainImgUrl'] = $userData['mainImgUrl'][0];
-        $gallery = $request->get('gallery');
+        $userData['mainImgUrl'] = (int)$userData['mainImgUrl'][0];
+ //       $gallery = $request->get('gallery');
 
         if (empty($userData['slug'])) {
             $userData['slug'] = Str::slug($userData['title']);
@@ -90,14 +90,14 @@ class NewServiceScreen extends Screen
 
         $res = $service->fill($userData)->save();
 
-        if (!is_null($gallery) && !is_null($gallery['photos'])) {
-            foreach ($gallery['photos'] as $item) {
-                ServicePhoto::create([
-                    "service_id" => $service->id,
-                    "photo_id" => $item,
-                ]);
-            }
-        }
+//        if (!is_null($gallery) && !is_null($gallery['photos'])) {
+//            foreach ($gallery['photos'] as $item) {
+//                ServicePhoto::create([
+//                    "service_id" => $service->id,
+//                    "photo_id" => $item,
+//                ]);
+//            }
+//        }
 
 
         if ($res) {

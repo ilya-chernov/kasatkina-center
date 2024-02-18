@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://kasatkina-center.ru/</title>
+  <link>https://kasatkina-center.ru/</link>
+
+<item>
+     <link>https://kasatkina-center.ru/</link>
+     <title>Центр физиолечения и психоконсультирования</title>
+     <description>Центр физиолечения и психоконсультирования</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://kasatkina-center.ru/about</link>
+     <title>О медцентре</title>
+     <description>О медцентре</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://kasatkina-center.ru/articles</link>
+     <title>Статьи | Центр физиотерапии доктора Касаткиной</title>
+     <description>Статьи | Центр физиотерапии доктора Касаткиной</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://kasatkina-center.ru/services</link>
+     <title>Услуги и их стоимость</title>
+     <description>Услуги и их стоимость</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://kasatkina-center.ru/leader</link>
+     <title>Информация о руководителе</title>
+     <description>Информация о руководителе</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://kasatkina-center.ru/public/documents/Doc.pdf</link>
+     <title></title>
+     
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  
