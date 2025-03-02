@@ -1,0 +1,1654 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+style.css
+Версия 2 от 05.07.2023
+Версия 3 от 08.12.2023
+Версия 4 от 01.02.2025
+
+Версия 4.1 NEO от 28.02.2025
+
+ */
+
+
+li {
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 50px 10px 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.vid-container video {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.vid-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Кнопка закрытия */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Видео внутри модального окна */
+.modal-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+body {
+    margin: 100px 0 0 0;
+    padding: 0;
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.block-title {
+    text-align: center;
+}
+
+/* MAIN SETTINGS */
+
+.container {
+    max-width: 1200px;
+    line-height: 30px;
+    margin: 0 auto;
+}
+
+.btn-white {
+    padding: 12px 17px 12px 17px;
+    background-color: #fff;
+    border-radius: 203px;
+    font-weight: bold;
+    border: 3px solid white;
+    font-size: 10pt;
+    color: #3BC68B;
+    font-family: "Roboto Flex", serif;
+}
+
+.btn-transparent {
+    padding: 12px 17px 12px 17px;
+    border: 3px solid white;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 203px;
+    color: white;
+}
+
+.why-us {
+    padding: 100px 20px 50px 20px;
+}
+
+/* HEADER */
+
+.our-services {
+    padding: 60px 20px 60px 20px;
+}
+
+header {
+    font-size: 11pt;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+
+}
+
+.article__hero h1 {
+    font-size: 36px;
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.wrapper {
+    max-width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.greenline {
+    background-color: #3BC68B;
+    height: 30px;
+}
+
+/*Блок media about us*/
+.press-about {
+    margin: 20px 0 50px 0;
+}
+
+.ma-cards {
+    display: flex;
+    flex-wrap: wrap;      /* Позволяем карточкам переноситься на новую строку */
+    gap: 20px;            /* Расстояние между карточками */
+    justify-content: center; /* Центрируем карточки по горизонтали */
+}
+
+.publications-about-us {
+    margin: 50px 0 0 0;
+
+}
+.ma-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.ma-card:hover {
+    transform: translateY(-2px);
+}
+
+.ma-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ma-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+/* Список статей */
+.ma-articles {
+    display: flex;
+    flex-direction: column; /* По умолчанию все статьи идут столбиком */
+    gap: 20px;             /* Отступы между статьями */
+}
+
+/* Карточка статьи */
+.ma-article {
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* На узких экранах элементы вертикально */
+    gap: 10px;
+    padding: 15px;
+}
+
+/* Логотип издания */
+.ma-article-logo img {
+    max-width: 150px; /* Можно настроить нужный размер */
+    height: auto;
+    display: block;
+}
+
+/* Контейнер с текстом */
+.ma-article-content {
+    flex: 1;
+}
+
+.ma-article-content h3 {
+    margin-bottom: 5px;
+}
+
+.ma-article-content p {
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+/* Ссылка на статью */
+.ma-article-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ma-article-content a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность: на более широких экранах (от 768px) логотип и текст в строку */
+@media (min-width: 768px) {
+    .ma-article {
+        flex-direction: row; /* Располагаем логотип и текст в одну строку */
+        align-items: center; /* Центрируем по вертикали */
+    }
+
+    .ma-article-logo {
+        margin-right: 20px;
+    }
+}
+
+
+
+/* БЛОК WELCOME */
+/* Обновленные стили */
+.welcome {
+    background-color: #3BC68B;
+    max-height: 800px;/* Убедитесь, что блок не становится слишком маленьким */
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.welcome-image img {
+    max-width: 340px; /* Максимальная ширина изображения */
+    width: auto; /* Сохраняет пропорции по ширине */
+    height: auto; /* Сохраняет пропорции по высоте */
+    margin: 0 auto; /* Центрирует изображение */
+    display: block; /* Убирает лишние отступы */
+    object-fit: contain; /* Уменьшает картинку, сохраняя весь её контент */
+    border-radius: 10px; /* Закругление углов */
+    align-items: end;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.welcome-text {
+    max-width: 385px;
+}
+
+.welcome-text h1 {
+    font-size: 17pt;
+    color: white;
+    font-family: "Roboto Flex", serif;
+    font-weight: bold;
+    line-height: 26pt;
+    max-height: 265px;
+}
+
+.welcome-text p {
+    line-height: 20pt;
+    color: white;
+}
+
+
+.hero {
+    position: relative;
+    background: url('/media/proc.jpg') center/cover;
+    height: 100vh; /* Изменили высоту на 100vh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Обрежем все, что выходит за границы секции */
+    margin: 0; /* Убираем отступы */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; /* Зададим z-index, чтобы затемнение было под текстом */
+}
+
+.footer_second {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 11pt;
+}
+
+.photo-text-section {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+.photo-text-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+
+.why-us-cards {
+    display: grid;
+    /*  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматическое заполнение столбцов с минимальной шириной 300px */
+    gap: 20px; /* Расстояние между карточками */
+}
+
+.why-us-container {
+    display: flex;
+    gap: 20px;
+}
+
+.why-us-card {
+    background-color: #f5f5f5; /* Цвет фона для наглядности */
+    padding: 20px; /* Отступ вокруг текста внутри карточки */
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    box-sizing: border-box;
+    line-height: 25px;
+}
+
+.the-only-who-go {
+    margin-top: 40px;
+    display: flex;
+    padding: 60px 40px 60px 40px;
+    gap: 40px;
+}
+
+.the-only-who-go-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.the-only-who-go-image-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.green-section {
+    background-color: #3BC68B;
+    color: white;
+}
+
+.the-only-who-go-image img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.the-only-who-go-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.the-only-who-go-text h2 {
+    margin-top: 0; /* Убираем верхний отступ для заголовка */
+}
+
+.the-only-who-go h2 {
+    font-size: 24px; /* Размер заголовка */
+    margin-bottom: 20px; /* Отступ между заголовком и текстом */
+}
+
+.the-only-who-go p {
+    font-size: 18px; /* Размер текста */
+    line-height: 1.5; /* Межстрочный интервал */
+}
+
+.title {
+    text-align: center;
+}
+
+/* Дополнительные стили, если нужно выровнять содержимое внутри карточек */
+.why-us-card h2 {
+    margin-bottom: 10px;
+}
+
+.text-content {
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-content h2 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Зададим z-index для текста, чтобы он был над затемнением */
+    color: white;
+    text-align: center;
+    max-width: 630px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 16px;
+}
+
+.service-desc {
+    background-color: #3BC68B;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 2px 5px 2px;
+    text-align: center;
+}
+
+.hero-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #3BC68B;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.article__hero__text {
+    text-align: center;
+    max-width: 600px;
+}
+
+
+.article__hero h1 {
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.article__hero p {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.slider::-webkit-scrollbar {
+    display: none;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
+
+/* Обертка для карточки услуг */
+.service-card {
+    border: 1px solid #ddd; /* Рамка карточки */
+    border-radius: 8px; /* Закругленные углы */
+    overflow: hidden; /* Скрытие лишних частей, если контент превышает размеры */
+    margin: 10px 5px;
+    min-height: 260px;
+    /* Адаптивные стили для ширины карточки */
+    width: 100%;
+    max-width: 300px; /* Максимальная ширина для удобства чтения на больших экранах */
+    cursor: pointer;
+}
+
+/* Изображение внутри карточки */
+.service-card img {
+    width: 100%; /* Занимает 100% ширины контейнера */
+    height: auto; /* Автоматический расчет высоты для сохранения пропорций */
+    max-height: 200px; /* Максимальная высота изображения */
+    object-fit: cover; /* Заполнение области изображением */
+}
+
+/* Заголовок и цена */
+.service-card h2,
+.service-card p {
+    margin: 10px; /* Внутренний отступ для текста */
+}
+
+.service-card h2 {
+    font-size: 14px;
+}
+
+/* При наведении курсора на карточку, изменение стиля */
+.service-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень при наведении */
+}
+
+/* Стили для категории */
+.category-title {
+    margin: 20px 0; /* Внешний отступ между категориями */
+}
+
+/* Основной контейнер для карточек */
+.services-container {
+    display: flex; /* Распределение карточек в строку */
+    flex-wrap: wrap; /* Перенос карточек на следующую строку при нехватке места */
+    justify-content: flex-start; /* Выравнивание карточек по ширине контейнера */
+    align-items: center;
+    max-width: 1000px;
+}
+
+.service-img {
+    position: relative;
+}
+
+.service-price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3BC68B;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+.header {
+    height: 70px;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.contacts {
+    overflow: hidden;
+}
+
+.greenline-contacts {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.greenline-contacts__item {
+    display: flex;
+    color: white;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.greenline-contacts__item_text {
+    color: white;
+}
+
+.greenline-contacts__item:last-child {
+    margin-right: 0px;
+}
+
+.greenline-contacts__item_img {
+    display: flex;
+    align-items: center;
+}
+
+.greenline-contacts__item_img img {
+    width: 80%;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.menu__logo img {
+    height: 50px;
+    margin-right: 30px;
+}
+
+
+.menuNav a {
+    color: black !important;
+}
+
+.menuNav a:hover {
+    text-decoration: none !important;
+}
+
+.menu__logo {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu__nav li, a {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
+}
+
+.menu__nav li:last-child {
+    margin-right: 0px;
+}
+
+.menu__nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu_nav ul {
+
+}
+
+.button {
+    padding: 14px;
+    background-color: #3BC68B;
+    border-radius: 30px;
+    color: white;
+}
+
+.menu__calltoaction {
+    flex: 1 0 auto;
+    text-align: end;
+
+}
+
+.menu__calltoaction a {
+    margin: 0;
+}
+
+.burger {
+    display: none;
+}
+
+/* HERO */
+
+.hero-item {
+    display: flex;
+}
+
+.hero-image img {
+    object-fit: fill;
+    max-width: 50%;
+}
+
+.hero-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+
+.white {
+    color: white;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+
+.text {
+    padding-top: 15px;
+}
+
+.text li {
+    margin-bottom: 10px;
+}
+
+/* SERVICES */
+
+.services {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.about {
+    background-color: #3BC68B;
+    padding-bottom: 40px;
+}
+
+.section-header {
+    background-color: #3BC68B;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-header-content {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+}
+
+.section-header-content h1 {
+    font-size: 28px;
+}
+
+
+.services-item {
+    margin-right: 10px;
+    padding: 15px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+    -webkit-box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+    -moz-box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+    border-radius: 20px;
+    background-color: rgb(247, 247, 247);
+    font-size: 14px;
+}
+
+.s-img {
+    margin-top: 15px;
+    display: flex;
+    justify-content: end;
+}
+
+.services-item img {
+    width: 55px;
+    height: 60px;
+}
+
+.services-item p {
+    width: 50%;
+    font-size: 14px;
+}
+
+.services-list {
+    display: flex;
+}
+
+.services-item p {
+    text-align: justify;
+}
+
+.video-about-us {
+    padding: 0px 20px 60px 20px;
+}
+
+/* LEAVE MESSAGE SECTION */
+.leavemessage {
+    height: 220px;
+    background-color: #3BC68B;
+    margin-top: 40px;
+}
+
+.section-message {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-button {
+    display: flex;
+    align-items: center;
+}
+
+.message-button a {
+    color: black;
+    background-color: white;
+}
+
+.map {
+    position: relative;
+}
+
+.footer_item {
+    display: flex;
+    padding-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon {
+    margin-right: 5px;
+}
+
+.footer_icon img {
+    width: 18px;
+}
+
+
+.footer_first p {
+    font-size: 11pt;
+    font-weight: 100;
+    font-family: "Roboto", serif;
+    line-height: 30px;
+}
+
+.map-info_container {
+    position: relative;
+}
+
+.map-item {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #3BC68B;
+    padding: 25px;
+    color: white;
+    overflow: hidden;
+    border-radius: 20px 0 0 0;
+}
+
+.message-text {
+    padding: 20px;
+}
+
+.footer_first {
+    max-width: 381px;
+}
+
+
+.phone {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.phone-img, .phone-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(192, 192, 192);
+    text-align: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
+
+
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.post-container {
+    padding-top: 120px;
+    overflow: hidden;
+}
+
+
+.prices {
+
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.price-item {
+    background-color: #3BC68B;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+
+.price-item h3 {
+    width: 80%;
+}
+
+.price {
+    text-align: center;
+}
+
+
+.leader {
+    display: flex;
+    background-color: #3BC68B;
+    padding: 20px;
+    border-radius: 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.leader img {
+    width: 70%;
+    border-radius: 50%;
+
+}
+
+.article__title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.category-title {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+
+.article__content {
+    margin-top: 45px;
+    line-height: 36px;
+    margin-bottom: 40px;
+}
+
+.article__content p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.article__content ul, .article__content li, .article__content p {
+    font-size: 17px;
+}
+
+.article__content > p > img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.article__image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.articles__item {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    margin: 15px 0 15px 0;
+    background-size: contain;
+
+}
+
+
+.leader-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leader-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-white {
+    padding: 10px;
+    color: black;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.img-container img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    object-fit: cover;
+
+}
+
+.photo-gallery img {
+    width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.content-title {
+    margin-top: 30px;
+}
+
+.download {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.download-link {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-us-reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-link a {
+    color: #3BC68B;
+}
+
+a {
+    margin: 0;
+}
+
+.ab {
+    margin-top: 5px;
+}
+
+.link {
+    text-decoration: underline #3BC68B;
+    color: #3BC68B;
+}
+
+#myCarousel {
+    --f-carousel-slide-height: 60%;
+    --f-carousel-spacing: 10px;
+    height: auto;
+}
+
+.f-carousel__slide {
+    display: flex;
+    justify-content: center;
+}
+
+.f-carousel__slide img {
+    max-width: 70%;
+    height: auto;
+
+}
+
+.text-block {
+    line-height: 33px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.more-about {
+    padding-top: 40px;
+    text-align: end;
+}
+
+.more-about a {
+    color: #3BC68B;
+}
+
+
+/* LISTING */
+.listing {
+    background-color: #3BC68B;
+
+}
+
+.listing-container {
+    display: flex;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    justify-content: center;
+}
+
+.listing-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.listing-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.listing-text {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+.block-flex {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    text-align: center;
+}
+
+.txt-block {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .wrapper, .container {
+        max-width: 768px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .why-us-container {
+        flex-direction: column;
+    }
+
+    .why-us-reviews {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu__nav a {
+        font-size: 10pt;
+    }
+
+    .menu__nav li {
+        margin-right: 5px;
+    }
+
+    .ab {
+        margin: 10px;
+    }
+
+    .services-item {
+        width: 140px;
+    }
+
+    .services-item p {
+        font-size: 12px;
+    }
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+
+    .welcome {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    body {
+        margin: 70px 0 0 0;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-image {
+        margin-top: 20px;
+    }
+
+
+    .services-container {
+        justify-content: center;
+    }
+
+    .service-card {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .service-card img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: fill;
+    }
+
+    .the-only-who-go {
+        flex-direction: column;
+    }
+
+    .the-only-who-go-text {
+        width: 100%;
+    }
+
+    .the-only-who-go-image {
+        width: 100%;
+        margin-right: 0px;
+        padding-bottom: 40px;
+    }
+
+    .the-only-who-go-text {
+        text-align: center;
+    }
+
+    .article__content {
+        padding: 13px;
+        line-height: 30px;
+        text-align: justify;
+    }
+
+    p {
+        font-size: 11pt;
+    }
+
+    h1 {
+        font-size: 13pt;
+    }
+
+    .menu__calltoaction a {
+        display: none;
+    }
+
+    .services-item p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .text-block p {
+        padding: 10px;
+    }
+
+    .text-block {
+
+    }
+
+    .listing-image {
+        margin-right: 0px;
+    }
+
+    .listing-image img {
+        width: 70%;
+    }
+
+    .menu__nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #3BC68B;
+        color: white;
+        padding: 30px;
+        margin-top: 70px;
+        display: none;
+        transition-delay: 1s;
+    }
+
+    .article__hero h1 {
+        font-size: 24px;
+    }
+
+
+    .listing-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .listing-text {
+        width: 90%;
+    }
+
+    .menu__nav li {
+        display: block;
+
+
+    }
+
+    .menu__nav ul {
+        border-bottom: 3px solid white;
+        box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+        -webkit-box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+        -moz-box-shadow: 10px 10px 5px -7px rgba(130, 130, 130, 0.75);
+    }
+
+
+    .menu__nav a {
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: 600;
+        color: white;
+    }
+
+    .greenline-contacts {
+        flex-direction: column;
+
+    }
+
+    .greenline-contacts__item {
+        text-align: right;
+        margin: 5px 5px;
+        font-size: 9pt;
+        padding: 0;
+    }
+
+    .greenline {
+        display: none;
+    }
+
+    .menu {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .burger {
+        cursor: pointer;
+        display: block;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .hero {
+        padding-top: 40px;
+    }
+
+
+    .hero-text {
+        margin-top: 190px;
+        text-align: center;
+        margin-right: 0px;
+        padding: 0px 65px;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 50%;
+    }
+
+
+    .hero-container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero-text {
+        margin-top: 190px;
+        text-align: center;
+        margin-right: 0px;
+        padding: 0px 65px;
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 50%;
+    }
+
+
+    .section-header {
+        text-align: center;
+    }
+
+    .section-message {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .message-button {
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .map {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .map-text {
+
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .phone {
+        justify-content: center;
+    }
+
+    .map-item {
+        text-align: center;
+        position: unset;
+        display: block;
+        border-radius: 8px 8px 0px 0px;
+        width: auto;
+        margin-right: 0px;
+    }
+
+    .leader {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 0px;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .footer_first {
+        max-width: 100%;
+    }
+
+    .footer_logo img {
+        max-width: 300px;
+        width: 70%;
+    }
+
+    .footer_second {
+        text-align: center;
+        font-size: 12pt;
+    }
+
+
+    .post-container {
+        padding-top: 180px;
+    }
+
+    .photo-gallery img {
+        width: 100%;
+    }
+
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-item {
+        width: 85%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .welcome {
+        display: flex;
+    }
+    .welcome-text h1 {
+        font-size: 15pt;
+        line-height: 20pt;
+    }
+    .welcome-text > .btn-area {
+        margin-top: 30px;
+    }
+
+    .welcome-container {
+        max-width: 350px;
+    }
+}
