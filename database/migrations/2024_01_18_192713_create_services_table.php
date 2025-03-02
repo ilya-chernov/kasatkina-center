@@ -24,8 +24,7 @@ class CreateServicesTable extends Migration
         Schema::table("services", function (Blueprint $table) {
            $table->foreign("category_id")
            ->references("id")
-           ->on("service_categories")
-           ->onDelete('cascade');
+           ->on("service_categories");
 
             $table->foreign("mainImgUrl")
                 ->references("id")

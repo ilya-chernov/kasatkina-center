@@ -12,8 +12,4 @@ RewriteRule ^(.*)$ public/$1 [L]
 
 </IfModule>
 
-AuthType Basic
-AuthName "Restricted Content"
-AuthUserFile /var/www/u1906119/data/www/dev.kasatkina-center.ru/.htpasswd
-Require valid-user
 

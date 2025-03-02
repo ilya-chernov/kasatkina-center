@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /*
 style.css
 Версия 2 от 05.07.2023
 Версия 3 от 08.12.2023
+Версия 4 от 01.02.2025
+
+Версия 4.1 NEO от 28.02.2025
 
  */
+
+
+li {
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+}
+
 
 html {
     margin: 0;
@@ -13,8 +27,64 @@ html {
 }
 
 
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 50px 10px 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.vid-container video {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.vid-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* Кнопка закрытия */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Видео внутри модального окна */
+.modal-content video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
 body {
-    margin: 0;
+    margin: 100px 0 0 0;
     padding: 0;
     font-family: 'Roboto Flex', sans-serif;
 }
@@ -35,13 +105,28 @@ p {
 
 .container {
     max-width: 1200px;
+    line-height: 30px;
     margin: 0 auto;
 }
 
 .btn-white {
-    padding: 15px;
+    padding: 12px 17px 12px 17px;
     background-color: #fff;
-    border-radius: 15px;
+    border-radius: 203px;
+    font-weight: bold;
+    border: 3px solid white;
+    font-size: 10pt;
+    color: #3BC68B;
+    font-family: "Roboto Flex", serif;
+}
+
+.btn-transparent {
+    padding: 12px 17px 12px 17px;
+    border: 3px solid white;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 203px;
+    color: white;
 }
 
 .why-us {
@@ -59,6 +144,7 @@ header {
     position: fixed;
     left: 0;
     right: 0;
+    top: 0;
     z-index: 999;
 
 }
@@ -85,6 +171,159 @@ header {
     height: 30px;
 }
 
+/*Блок media about us*/
+.press-about {
+    margin: 20px 0 50px 0;
+}
+
+.ma-cards {
+    display: flex;
+    flex-wrap: wrap;      /* Позволяем карточкам переноситься на новую строку */
+    gap: 20px;            /* Расстояние между карточками */
+    justify-content: center; /* Центрируем карточки по горизонтали */
+}
+
+.publications-about-us {
+    margin: 50px 0 0 0;
+
+}
+.ma-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.ma-card:hover {
+    transform: translateY(-2px);
+}
+
+.ma-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ma-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+/* Список статей */
+.ma-articles {
+    display: flex;
+    flex-direction: column; /* По умолчанию все статьи идут столбиком */
+    gap: 20px;             /* Отступы между статьями */
+}
+
+/* Карточка статьи */
+.ma-article {
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* На узких экранах элементы вертикально */
+    gap: 10px;
+    padding: 15px;
+}
+
+/* Логотип издания */
+.ma-article-logo img {
+    max-width: 150px; /* Можно настроить нужный размер */
+    height: auto;
+    display: block;
+}
+
+/* Контейнер с текстом */
+.ma-article-content {
+    flex: 1;
+}
+
+.ma-article-content h3 {
+    margin-bottom: 5px;
+}
+
+.ma-article-content p {
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+/* Ссылка на статью */
+.ma-article-content a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.ma-article-content a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность: на более широких экранах (от 768px) логотип и текст в строку */
+@media (min-width: 768px) {
+    .ma-article {
+        flex-direction: row; /* Располагаем логотип и текст в одну строку */
+        align-items: center; /* Центрируем по вертикали */
+    }
+
+    .ma-article-logo {
+        margin-right: 20px;
+    }
+}
+
+
+
+/* БЛОК WELCOME */
+/* Обновленные стили */
+.welcome {
+    background-color: #3BC68B;
+    max-height: 800px;/* Убедитесь, что блок не становится слишком маленьким */
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+}
+
+.welcome-image img {
+    max-width: 340px; /* Максимальная ширина изображения */
+    width: auto; /* Сохраняет пропорции по ширине */
+    height: auto; /* Сохраняет пропорции по высоте */
+    margin: 0 auto; /* Центрирует изображение */
+    display: block; /* Убирает лишние отступы */
+    object-fit: contain; /* Уменьшает картинку, сохраняя весь её контент */
+    border-radius: 10px; /* Закругление углов */
+    align-items: end;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.welcome-text {
+    max-width: 385px;
+}
+
+.welcome-text h1 {
+    font-size: 17pt;
+    color: white;
+    font-family: "Roboto Flex", serif;
+    font-weight: bold;
+    line-height: 26pt;
+    max-height: 265px;
+}
+
+.welcome-text p {
+    line-height: 20pt;
+    color: white;
+}
+
+
 .hero {
     position: relative;
     background: url('/media/proc.jpg') center/cover;
@@ -107,6 +346,14 @@ header {
     z-index: 1; /* Зададим z-index, чтобы затемнение было под текстом */
 }
 
+.footer_second {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 11pt;
+}
+
 .photo-text-section {
     display: flex;
     align-items: center;
@@ -122,38 +369,6 @@ header {
     flex-grow: 1;
 }
 
-.welcome-container {
-    display: flex;
-    height: 100%;
-    gap: 50px;
-}
-
-.welcome-image img {
-    object-fit: contain;
-    width: 70%;
-}
-
-.welcome-image {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-}
-
-.welcome {
-    height: 100vh;
-    overflow: hidden;
-    background-color: #3BC68B;
-    border-radius: 0 0 10px 10px;
-}
-
-.welcome-text {
-    color: white;
-    margin-right: 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 462px;
-}
 
 .why-us-cards {
     display: grid;
@@ -443,6 +658,10 @@ header {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+.contacts {
+    overflow: hidden;
+}
+
 .greenline-contacts {
     height: 30px;
     display: flex;
@@ -507,7 +726,6 @@ header {
     text-decoration: none;
     color: black;
     margin-right: 15px;
-
 }
 
 .menu__nav li:last-child {
@@ -696,16 +914,42 @@ header {
     position: relative;
 }
 
+.footer_item {
+    display: flex;
+    padding-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_icon {
+    margin-right: 5px;
+}
+
+.footer_icon img {
+    width: 18px;
+}
+
+
+.footer_first p {
+    font-size: 11pt;
+    font-weight: 100;
+    font-family: "Roboto", serif;
+    line-height: 30px;
+}
+
+.map-info_container {
+    position: relative;
+}
+
 .map-item {
     position: absolute;
-    top: 0;
     right: 0;
+    bottom: 0;
     background-color: #3BC68B;
-    padding: 20px;
+    padding: 25px;
     color: white;
-    margin-right: 10%;
-    margin-top: 10%;
-    border-radius: 8px;
+    overflow: hidden;
+    border-radius: 20px 0 0 0;
 }
 
 .message-text {
@@ -713,12 +957,9 @@ header {
 }
 
 .footer_first {
-    max-width: 500px;
+    max-width: 381px;
 }
 
-.footer_second {
-    text-align: left;
-}
 
 .phone {
     display: flex;
@@ -736,13 +977,13 @@ footer {
     background-color: rgb(192, 192, 192);
     text-align: center;
     justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 50px;
 
 
 }
 
 .footer {
-    padding-top: 40px;
-    padding-bottom: 40px;
     display: flex;
     justify-content: space-between;
 
@@ -829,8 +1070,8 @@ footer {
     text-align: justify;
 }
 
-.article__content ul, .article__content li {
-    font-size: 20px;
+.article__content ul, .article__content li, .article__content p {
+    font-size: 17px;
 }
 
 .article__content > p > img {
@@ -920,15 +1161,34 @@ footer {
     color: #3BC68B;
 }
 
+a {
+    margin: 0;
+}
+
+.ab {
+    margin-top: 5px;
+}
+
+.link {
+    text-decoration: underline #3BC68B;
+    color: #3BC68B;
+}
+
 #myCarousel {
     --f-carousel-slide-height: 60%;
     --f-carousel-spacing: 10px;
     height: auto;
 }
 
+.f-carousel__slide {
+    display: flex;
+    justify-content: center;
+}
+
 .f-carousel__slide img {
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
+
 }
 
 .text-block {
@@ -998,7 +1258,11 @@ footer {
 
 @media screen and (max-width: 1000px) {
     .wrapper, .container {
-        max-width: 760px;
+        max-width: 768px;
+    }
+
+    .container {
+        padding: 15px;
     }
 
     .why-us-container {
@@ -1048,7 +1312,30 @@ footer {
     height: 100%;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
+
+    .welcome {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    body {
+        margin: 70px 0 0 0;
+    }
+
+    .welcome-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .welcome-image {
+        margin-top: 20px;
+    }
 
 
     .services-container {
@@ -1209,35 +1496,6 @@ footer {
         padding-top: 40px;
     }
 
-    .welcome {
-        height: 100vh;
-        padding-top: 0px;
-        overflow: hidden;
-    }
-
-    .welcome-container {
-        flex-direction: column-reverse;
-        overflow: hidden;
-        text-align: center;
-        align-items: center;
-    }
-
-    .welcome-text {
-        margin-right: 0px;
-        width: 100%;
-        margin-top: 110px;
-        max-width: 425px;
-    }
-
-    .welcome-image {
-        display: flex;
-        justify-content: center;
-        align-items: end;
-    }
-
-    .welcome-image img {
-        width: 70%;
-    }
 
     .hero-text {
         margin-top: 190px;
@@ -1347,8 +1605,14 @@ footer {
         max-width: 100%;
     }
 
+    .footer_logo img {
+        max-width: 300px;
+        width: 70%;
+    }
+
     .footer_second {
         text-align: center;
+        font-size: 12pt;
     }
 
 
@@ -1369,4 +1633,22 @@ footer {
         width: 85%;
     }
 
+}
+
+@media screen and (max-width: 480px) {
+
+    .welcome {
+        display: flex;
+    }
+    .welcome-text h1 {
+        font-size: 15pt;
+        line-height: 20pt;
+    }
+    .welcome-text > .btn-area {
+        margin-top: 30px;
+    }
+
+    .welcome-container {
+        max-width: 350px;
+    }
 }

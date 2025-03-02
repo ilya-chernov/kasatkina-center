@@ -1,0 +1,9 @@
+{
+    "version": "1.2",
+    "api_version": 3,
+    "layout": {
+        "logo": "https://kasatkina-center.ru/tableau.png",
+        "color": "#FFF",
+        "show_title": false
+    }
+}

@@ -17,9 +17,8 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('short_description');
-            $table->unsignedInteger('coverImgUrl');
+            $table->text('cover_url');
             $table->text('content');
-            $table->text('code'); // символьный код для доступа к статье
             $table->integer('author_id')->nullable();
             $table->timestamps();
         });

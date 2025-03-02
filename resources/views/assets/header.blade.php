@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/stylesheet.css?sf2') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="/js/jquery3.7.1.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-	<!-- FAVICON -->
+        <!- FAVICON -->
 	<link rel="apple-touch-icon" sizes="57x57" href="../../../public/favicons/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="../../../public/favicons/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="../../../public/favicons/apple-icon-72x72.png">
@@ -27,28 +30,17 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-		<!-- Yandex.Metrika counter -->
-	<script type="text/javascript" >
-	   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-	   m[i].l=1*new Date();
-	   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-	   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-	   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <link rel="yandex-tableau-widget" href="{{ asset('tableau.json') }}">
 
-	   ym(94136155, "init", {
-			clickmap:true,
-			trackLinks:true,
-			accurateTrackBounce:true,
-			webvisor:true
-	   });
-	</script>
+		<!-- Yandex.Metrika counter -->
+    <script src="{{ asset('js/metrika.js') }}" type="text/javascript" ></script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/94136155" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
     <script type='application/ld+json'>
         {
-          "@context": "http://www.schema.org",
+          "@context": "https://www.schema.org",
           "@type": "MedicalClinic",
-          "name": "Центр физиолечения и психоконсультирования доктора Касаткиной",
+          "name": "Центр физиотерапии доктора Касаткиной Н.Н.",
           "url": "https://kasatkina-center.ru/",
           "logo": "https://kasatkina-center.ru/media/logo.png",
           "description": "поддерживающие процедуры для комплексного безопасного лечения и восстановления организма после болезней и травм",
@@ -73,9 +65,19 @@
         }
     </script>
 
+    <meta property="og:site_name" content="Центр физиотерапии доктора Касаткиной Н.Н." />
+    <meta property="og:title" content="@yield('title')" />
+    <meta name="description" content="@yield('page-description')" />
+    <meta name="og:description" content="@yield('page-description')" />
+    <meta property="og:locale" content="ru" />
+    <meta property="og:type" content="website" />
+    <meta property="og:logo" content="{{ asset('images/Logo.jpg') }}" />
+    <meta property="og:image" content="{{ asset('images/preview.jpg') }}" />
+    <link rel="canonical" href="<?= "https://kasatkina-center.ru". $_SERVER['REQUEST_URI']?>" />
+
     @yield('head')
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="{{ asset('css/stylesheet.css?sfd') }}">
+
+    <link href="{{ asset('css/video-js.css') }}" rel="stylesheet">
 
 
     <title>@yield('title')</title>
@@ -113,7 +115,7 @@
                             <img src="../media/mail.png" alt="">
                         </div>
                         <div class="greenline-contacts__item_text">
-                            kasatkina-center@yandex.ru
+                            info@kasatkina-center.ru
                         </div>
                     </div>
 
@@ -134,7 +136,6 @@
                         <ul id="menuNav">
                             <li><a href="{{ route('home')}}">Главная</a></li>
                             <li><a href="{{ route('about')}}">О медцентре</a></li>
-                            <li><a href="{{ route('article.index')}}">Статьи</a></li>
                             <li><a href="{{ route('our-services')}}">Услуги</a></li>
                             <li><a href="{{ route('home')}}#contacts">Контакты</a></li>
                             @auth<li><a href="/admin">Управление сайтом</a></li>@endauth

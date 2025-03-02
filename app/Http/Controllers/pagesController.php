@@ -10,6 +10,9 @@ class pagesController extends Controller
         return view('about');
     }
 
+    public function smiONas() {
+        return view('media-about-us.index');
+    }
     public function servicesPage() {
         return view('services');
     }

@@ -26,6 +26,8 @@ Route::get('/services/{slug}', [ServicesController::class, "showService"])->name
 
 Route::get('/leader', [pagesController::class, 'leaderPage'])->name('leader');
 
+Route::get('/smi-o-nas', [pagesController::class, 'smiONas'])->name('smi-o-nas');
+
 Route::get('/articles', [ArticlesController::class, 'index'])->name('article.index');
 Route::get('/articles/{code}', [ArticlesController::class, 'viewArticle'])->name('article');
 
